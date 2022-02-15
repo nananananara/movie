@@ -191,7 +191,7 @@ function Detail() {
 
         <div className='btnBox'>
             <button onClick={()=>{history.goBack()}}>뒤로가기</button>
-            <a href="/">메인으로</a>
+            <a href="/movie/">메인으로</a>
         </div>
        
     
