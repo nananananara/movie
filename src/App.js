@@ -14,6 +14,7 @@ function App() {
     await axios.get(api)
       .then((result)=>{
         setState([...result.data.results]);
+        console.log([...result.data.results]);
       })
       .catch(()=>{
         console.log("실패");
@@ -67,7 +68,7 @@ function App() {
       </header>
 
       <Switch>
-        <Route path="/movie" exact>
+        <Route path="/" exact>
           {
             movie === [] ? null :
             <div className='main'>
@@ -90,7 +91,7 @@ function App() {
           }
         </Route>
 
-        <Route path="/movie/detail/:param">
+        <Route path="/detail/:param">
           <Detail />
         </Route>
       </Switch>  
