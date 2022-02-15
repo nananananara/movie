@@ -24,7 +24,7 @@ function Detail() {
     await axios.get(api)
       .then((result)=>{
         state(result.data);
-        console.log(result.data);
+        //console.log(result.data);
       })
       .catch(()=>{
         console.log("실패");
@@ -67,7 +67,6 @@ function Detail() {
         }
     }
   } 
-  console.log(videoURL);
 
   const settings = {
     arrows: true,
@@ -178,6 +177,7 @@ function Detail() {
                                     <div className='thumb'>
                                         <img src={IMG_BASIC+"w300"+a.poster_path} alt={a.title} />
                                     </div>
+                                    <div className='ov'><span>상세정보</span></div>
                                 </a>
                             </div>
                         )
@@ -187,6 +187,11 @@ function Detail() {
                 }
                  
             </div>
+        </div>
+
+        <div className='btnBox'>
+            <button onClick={()=>{history.goBack()}}>뒤로가기</button>
+            <a href="/">메인으로</a>
         </div>
        
     
