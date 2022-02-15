@@ -1,0 +1,87 @@
+@import url('reset.css');
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('../font/GmarketSansMedium.woff') format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'GmarketSans';
+    src :url('../font/GmarketSansBold.woff') format('woff');
+    font-weight: 700;
+}
+.gsans {font-family: 'GmarketSans';}
+
+$listMargin : 5rem -1rem;
+$viewMargin : 0 -1rem 5rem;
+$margin : 5rem 0;
+
+* {box-sizing:border-box; word-break: keep-all;}
+html { background:#060d17; font-size:10px; color:#fff;}
+
+header {position:relative; z-index:10; width:100%; text-align:center; }
+header.sub {position:absolute; left:0; top:0; width:100%;}
+.header {margin:$margin;}
+
+.logo {padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,.1); font-weight:bold; font-size:3rem;}
+footer {width:100%; margin:12rem 0 5rem; }
+.footer {padding:5rem 0 0;border-top:1px solid rgba(255,255,255,.1); text-align:center; font-size:1.5rem;}
+.layout {width:100%; max-width:1240px; margin:0 auto;}
+.detailTit {margin:0 0 1rem; font-size:2.2rem; font-weight:bold; color:#4c5a67;}
+
+.movie {
+    display:flex; flex-wrap: wrap; margin:$listMargin; 
+    .movie-list {position:relative; width:calc(20% - 2rem); margin:0 1rem 2rem;}
+    .movie-list a {display:block; width:100%;}
+    .movie-list .thumb {width:100%;}
+    .movie-list img {width:100%;}
+    .movie-list .ov {position:absolute; left:0; top:0; width:100%; height:100%; }
+
+}
+
+.btnBox {margin:$margin; text-align:center;
+    button {min-width:200px; padding:1rem; border:1px solid #8a8d98; background:transparent; color:#8a8d98; text-align: center; font-size:1.8rem; }
+}
+
+// 디테일 상세정보 
+.detail-topImg {position:relative; width:100%; height:400px; background-size:cover; background-position:center 20%; background-repeat:no-repeat;} 
+.detail-topImg:before {display:block;position:absolute;left:0;bottom:0;content:''; width:100%; height:100%; background: linear-gradient(to bottom, transparent, #060d17);}
+.detail-topImg:after {display:block;position:absolute;left:0;top:0;content:''; width:100%; height:12rem; background: linear-gradient(to bottom, #060d17, transparent);}
+.detail-infoBox { display:flex; padding:6rem 0;
+    .detail-infoBox-img {width:300px;}
+    .detail-infoBox-text {width:calc(100% - 300px); padding:5rem; color:#fff;}
+    .detail-infoBox-text .tit {margin:0 0 1rem; font-size:4rem; font-weight:bold;}
+    .detail-infoBox-text .info {font-size:2rem;}
+    .detail-infoBox-text .info span {display:inline-block;}
+    .detail-infoBox-text .info span:not(:last-child):after {display:inline-block; width:3px; height:3px; margin:-0.3rem 1rem 0;border-radius:50%; background:#fff; vertical-align: middle; content:'';}
+    .detail-infoBox-text .info span em {display:inline-block;}
+    .detail-infoBox-text .info span em:not(:last-child):after{display:inline-block; content:"/"}
+    .detail-infoBox-text strong {display:block; margin:4rem 0 1rem; font-size:1.8rem; opacity:0.5;}
+    .detail-infoBox-text p {font-size:1.8rem; opacity:0.5;}
+}
+
+//디테일 출연진 
+.people {display:flex; flex-wrap:wrap; margin:$viewMargin;
+    .people-list {width:calc(10% - 2rem); margin:0 1rem 2rem; color:#fff; font-size:1.5rem; text-align:center;}
+    .people-list .thumb {width:100%; margin:0 0 1rem;}
+    .people-list .thumb img {width:100%;}
+    .people-list strong {display:block; font-weight:bold;}
+}
+
+/* 디테일 비디오 */
+.video {display:flex; flex-wrap:wrap; margin:0 -1rem 6rem;
+    .video-list {width:calc(50% - 2rem); height:300px; margin:0 1rem 2rem;}
+    .video-list iframe {width:100%; height:100%;}
+}
+
+/* 디테일 추천리스트  */
+.recommend {position:relative; margin:0 0 6rem;
+    .recommend-list .slick-arrow {z-index:10; top:38%; width:3rem; height:3rem; border:solid #4c5a67; transform:rotate(45deg); -webkit-transform:rotate(45deg);}
+    .recommend-list .slick-arrow::before {display:none;}
+    .recommend-list .slick-arrow.slick-prev {left:-35px; border-width:0 0 5px 5px;}
+    .recommend-list .slick-arrow.slick-next {right:-35px; border-width:5px 5px 0 0;}
+    .recommend-list .slick-list { margin:0 -1rem; }
+    .recommend-list .item {padding:0 1rem; }
+    .recommend-list .item a {display: block; width:100%; }
+    .recommend-list .item img {width:100%;}
+}
