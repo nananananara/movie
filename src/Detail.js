@@ -173,7 +173,7 @@ function Detail() {
                     recom.results.map((a,i)=>{
                         return(
                             <div className='item' key={i}>
-                                <a href={"/detail/"+a.id}>
+                                <a href={"/movie/detail/"+a.id}>
                                     <div className='thumb'>
                                         <img src={IMG_BASIC+"w300"+a.poster_path} alt={a.title} />
                                     </div>
