@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename="/movie">
+    <BrowserRouter basename={process.env.PUBLIC_UPL}>
       <App /> 
     </BrowserRouter>
   </React.StrictMode>,
