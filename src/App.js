@@ -68,7 +68,7 @@ function App() {
       </header>
 
       <Switch>
-        <Route path="/movie" exact>
+        <Route path="/" exact>
           {
             movie === [] ? null :
             <div className='main'>
@@ -91,7 +91,7 @@ function App() {
           }
         </Route>
 
-        <Route path="/movie/detail/:param">
+        <Route path="/detail/:param">
           <Detail />
         </Route>
       </Switch>  
