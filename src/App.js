@@ -20,6 +20,7 @@ function App() {
       })
   };
 
+
   useEffect(()=>{
     const api = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko&page=1` //인기순
     const apiRecent = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=ko&page=1` //최신순
