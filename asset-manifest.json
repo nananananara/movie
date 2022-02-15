@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "https://nananananara.github.io/movie/static/css/main.8802fcbc.css",
-    "main.js": "https://nananananara.github.io/movie/static/js/main.128e7365.js",
-    "static/js/787.e253fc0a.chunk.js": "https://nananananara.github.io/movie/static/js/787.e253fc0a.chunk.js",
-    "static/media/GmarketSansBold.woff": "https://nananananara.github.io/movie/static/media/GmarketSansBold.f91f04ac2c5b8c8cd87d.woff",
-    "static/media/GmarketSansMedium.woff": "https://nananananara.github.io/movie/static/media/GmarketSansMedium.9e47d15372ad77d4a5c7.woff",
-    "static/media/slick.svg": "https://nananananara.github.io/movie/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "https://nananananara.github.io/movie/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "https://nananananara.github.io/movie/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "index.html": "https://nananananara.github.io/movie/index.html",
-    "static/media/slick.woff": "https://nananananara.github.io/movie/static/media/slick.295183786cd8a1389865.woff",
-    "main.8802fcbc.css.map": "https://nananananara.github.io/movie/static/css/main.8802fcbc.css.map",
-    "main.128e7365.js.map": "https://nananananara.github.io/movie/static/js/main.128e7365.js.map",
-    "787.e253fc0a.chunk.js.map": "https://nananananara.github.io/movie/static/js/787.e253fc0a.chunk.js.map"
+    "main.css": "/movie/static/css/main.0fb12af4.css",
+    "main.js": "/movie/static/js/main.2a69237f.js",
+    "static/js/787.e253fc0a.chunk.js": "/movie/static/js/787.e253fc0a.chunk.js",
+    "static/media/GmarketSansBold.woff": "/movie/static/media/GmarketSansBold.f91f04ac2c5b8c8cd87d.woff",
+    "static/media/GmarketSansMedium.woff": "/movie/static/media/GmarketSansMedium.9e47d15372ad77d4a5c7.woff",
+    "static/media/slick.svg": "/movie/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/movie/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/movie/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/movie/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/movie/index.html",
+    "main.0fb12af4.css.map": "/movie/static/css/main.0fb12af4.css.map",
+    "main.2a69237f.js.map": "/movie/static/js/main.2a69237f.js.map",
+    "787.e253fc0a.chunk.js.map": "/movie/static/js/787.e253fc0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8802fcbc.css",
-    "static/js/main.128e7365.js"
+    "static/css/main.0fb12af4.css",
+    "static/js/main.2a69237f.js"
   ]
 }
