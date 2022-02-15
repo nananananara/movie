@@ -1,2 +1,2 @@
-API https://www.themoviedb.org/를 이용한 movie web..
+API https://www.themoviedb.org/를 영화 정보 사이트 
 
