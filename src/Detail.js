@@ -173,7 +173,7 @@ function Detail() {
                     recom.results.map((a,i)=>{
                         return(
                             <div className='item' key={i}>
-                                <a href={"/movie/detail/"+a.id}>
+                                <a href={"/detail/"+a.id}>
                                     <div className='thumb'>
                                         <img src={IMG_BASIC+"w300"+a.poster_path} alt={a.title} />
                                     </div>
@@ -191,7 +191,7 @@ function Detail() {
 
         <div className='btnBox'>
             <button onClick={()=>{history.goBack()}}>뒤로가기</button>
-            <a href="/movie/">메인으로</a>
+            <a href="/">메인으로</a>
         </div>
        
     

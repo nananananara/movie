@@ -66,7 +66,7 @@ function App() {
       </header>
 
       <Switch>
-        <Route path="/movie/" exact>
+        <Route path="/" exact>
           {
             movie === [] ? null :
             <div className='main'>
@@ -89,7 +89,7 @@ function App() {
           }
         </Route>
 
-        <Route path="/movie/detail/:param">
+        <Route path="/detail/:param">
           <Detail />
         </Route>
       </Switch>  
@@ -120,7 +120,7 @@ function Section1(props){
             props.movie.map((a,i)=>{
               return(
                 <div className='movie-list' key={i}>
-                  <a href={"/movie/detail/"+a.id}>
+                  <a href={"/detail/"+a.id}>
                     <div className='thumb'>
                       <img src={props.IMG_BASIC+"w300"+a.poster_path} alt={a.title+" 포스터"} />
                     </div>
@@ -152,7 +152,7 @@ function Section2(props){
             props.movieRecent.map((a,i)=>{
               return(
                 <div className='movie-list' key={i}>
-                  <a href={"/movie/detail/"+a.id}>
+                  <a href={"/detail/"+a.id}>
                     <div className='thumb'>
                       <img src={props.IMG_BASIC+"w300"+a.poster_path} alt={a.title+" 포스터"} />
                     </div>
