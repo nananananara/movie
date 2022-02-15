@@ -98,6 +98,7 @@ function App() {
         <div className='layout'>
           <div className='footer'>
           API https://www.themoviedb.org/<br />
+          Movie icons created by Freepik - Flaticon<br />
           COPYRIGHT© The MOVIE ALL RIGHT RESERVED.
           </div>
 
