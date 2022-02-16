@@ -61,7 +61,7 @@ function App() {
       <header id="header">
         <div className='layout'>
           <div className='header'>
-            <div className='logo'><a href="/" className='gsans'>THE Movies</a></div>
+            <div className='logo'><Link to="/" className='gsans'>THE Movies</Link></div>
           </div>
         
         </div>
@@ -122,12 +122,12 @@ function Section1(props){
             props.movie.map((a,i)=>{
               return(
                 <div className='movie-list' key={i}>
-                  <a href={"/detail/"+a.id}>
+                  <Link to={"/detail/"+a.id}>
                     <div className='thumb'>
                       <img src={props.IMG_BASIC+"w300"+a.poster_path} alt={a.title+" 포스터"} />
                     </div>
                     <div className='ov'><span>상세정보</span></div>
-                  </a>
+                  </Link>
                 </div>
               )
             })
@@ -154,12 +154,12 @@ function Section2(props){
             props.movieRecent.map((a,i)=>{
               return(
                 <div className='movie-list' key={i}>
-                  <a href={"/detail/"+a.id}>
+                  <Link to={"/detail/"+a.id}>
                     <div className='thumb'>
                       <img src={props.IMG_BASIC+"w300"+a.poster_path} alt={a.title+" 포스터"} />
                     </div>
                     <div className='ov'><span>상세정보</span></div>
-                  </a>
+                  </Link>
                 </div>
               )
             })
