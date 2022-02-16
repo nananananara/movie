@@ -92,6 +92,24 @@ function Detail(props) {
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
+    responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            arrows: false
+          }
+        },
+        {
+            breakpoint: 540,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              arrows: false
+            }
+        },
+    ]
   };
 
   
@@ -182,7 +200,7 @@ function Detail(props) {
                 {detail === '' ? null : detail.title}과(와) 비슷한 영화
             </div>
             <div className='recommend'>
-                {
+                {  
                     recom === '' ? null
                     :
                     <Slider className='recommend-list' {...settings}>

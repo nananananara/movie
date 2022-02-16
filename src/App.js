@@ -17,7 +17,7 @@ function App() {
     await axios.get(api)
       .then((result)=>{
         setState([...result.data.results]);
-        console.log([...result.data.results]);
+        //console.log([...result.data.results]);
         setLoading("false");
       })
       .catch(()=>{
