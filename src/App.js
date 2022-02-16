@@ -11,14 +11,18 @@ function App() {
   const [movie, setMovie] = useState([]);
   const [movieRecent, setMovieRecent] = useState([]);
   const [tab,setTab] = useState("section1");
+  const [loading,setLoading] = useState("true");
   const axiosData = async (api,setState)=> {
+    setLoading("true");
     await axios.get(api)
       .then((result)=>{
         setState([...result.data.results]);
         console.log([...result.data.results]);
+        setLoading("false");
       })
       .catch(()=>{
         console.log("실패");
+        setLoading("false");
       })
   };
 
@@ -34,13 +38,16 @@ function App() {
  
   const [page , setPage] = useState(1);
   const leadMore = ()=> {
+    setLoading("true");
     axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko&page=${page+1}`)
       .then((result)=>{
         setMovie([...movie,...result.data.results]);
         setPage(page+1);
+        setLoading("false");
       })
       .catch(()=>{
         console.log("실패");
+        setLoading("false");
       })
   }
 
@@ -69,6 +76,13 @@ function App() {
         </div>
       </header>
 
+      {
+        setLoading === "true"
+        ?<div class="load-wrapp"><div class="load-3"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+        :null
+      }
+      
+
       <Switch>
         <Route path="/" exact>
           {
@@ -94,7 +108,7 @@ function App() {
         </Route>
 
         <Route path="/detail/:param">
-          <Detail />
+          <Detail setLoading={setLoading} />
         </Route>
       </Switch>  
 

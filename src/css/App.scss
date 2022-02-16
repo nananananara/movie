@@ -108,3 +108,17 @@ footer {width:100%; margin:12rem 0 5rem; }
     .recommend-list a:hover .ov span,
     .recommend-list a:focus .ov span {opacity: 1; }
 }
+
+// 로딩화면
+.load-wrapp {position:fixed; left:0; top:0; z-index:100; width:100vw; height:100vh;background:#060d17;text-align: center;}
+.load-3 { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%);}
+.load-3 .line {display: inline-block;width: 25px;height: 25px; margin:0 10px;border-radius: 50%;background-color: #4b9cdb;}
+.load-3 .line:nth-last-child(1) {animation: loadingC 0.6s 0.1s linear infinite; -webkit-animation: loadingC 0.6s 0.1s linear infinite;}
+.load-3 .line:nth-last-child(2) {animation: loadingC 0.6s 0.2s linear infinite; -webkit-animation: loadingC 0.6s 0.2s linear infinite;}
+.load-3 .line:nth-last-child(3) {animation: loadingC 0.6s 0.3s linear infinite; -webkit-animation: loadingC 0.6s 0.3s linear infinite;}
+
+@keyframes loadingC {
+    0% {transform: translate(0, 0); -webkit-transform: translate(0, 0);}
+    50% {transform: translate(0, 15px); -webkit-transform: translate(0, 15px);}
+    100% {transform: translate(0, 0); -webkit-transform: translate(0, 0);}
+}

@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-function Detail() {
+function Detail(props) {
   let location = useLocation();
   let locationPath = location.pathname;
   let [url,setUrl] = useState();
@@ -22,13 +22,16 @@ function Detail() {
   const [recom, setRecom] = useState(''); //추천영화
 
   const axiosDataDetail = async (api, state)=> {
+    props.setLoading("true");
     await axios.get(api)
       .then((result)=>{
         state(result.data);
         //console.log(result.data);
+        props.setLoading("false");
       })
       .catch(()=>{
         console.log("실패");
+        props.setLoading("false");
       })
   };
 
