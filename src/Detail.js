@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { Route,Link,Switch,useHistory, useParams  } from 'react-router-dom';
+import { Route,Link,Switch,useHistory, useParams,useLocation  } from 'react-router-dom';
 import axios from 'axios';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
 function Detail() {
+  let location = useLocation();
+  let locationPath = location.pathname;
+  let [url,setUrl] = useState();
+
   const API_KEY = '1fb35531f1b1c3e5cd134fed5e21f5cc';
   const IMG_BASIC = 'https://image.tmdb.org/t/p/';
   let history = useHistory();
   let { param } = useParams();
   let paramNum = Number(param);
-  let addClass = ()=>{
-    document.getElementById('header').className = 'sub';
-  }
 
   const [detail, setDetail] = useState(''); //상세정보
   const [people, setPeople] = useState(''); //출연진
@@ -32,8 +33,20 @@ function Detail() {
   };
 
   useEffect(()=>{
-    addClass(); // header에 클래스 추가 
+    const api = `https://api.themoviedb.org/3/movie/${paramNum}?api_key=${API_KEY}&language=ko` //상세정보
+    const api_people = `https://api.themoviedb.org/3/movie/${paramNum}/credits?api_key=${API_KEY}&language=ko` //출연진
+    const api_video = `https://api.themoviedb.org/3/movie/${paramNum}/videos?api_key=${API_KEY}&language=ko` //관련영상
+    const api_recom = `https://api.themoviedb.org/3/movie/${paramNum}/recommendations?api_key=${API_KEY}&language=ko&page=1` //추천영화
+    axiosDataDetail(api,setDetail);
+    axiosDataDetail(api_people,setPeople);
+    axiosDataDetail(api_video,setVideo);
+    axiosDataDetail(api_recom,setRecom);
+  },[]);
 
+
+    useEffect(() => {
+    console.log(locationPath);
+    window.scrollTo(0,0);
     const api = `https://api.themoviedb.org/3/movie/${paramNum}?api_key=${API_KEY}&language=ko` //상세정보
     const api_people = `https://api.themoviedb.org/3/movie/${paramNum}/credits?api_key=${API_KEY}&language=ko` //출연진
     const api_video = `https://api.themoviedb.org/3/movie/${paramNum}/videos?api_key=${API_KEY}&language=ko` //관련영상
@@ -43,9 +56,10 @@ function Detail() {
     axiosDataDetail(api_video,setVideo);
     axiosDataDetail(api_recom,setRecom);
     
-  },[]);
+    },[locationPath]) 
+ 
 
-
+  
   let profile = [];
   let peopleList = ()=> {
     for(let i=0; i< people.cast.length; i++ ){
@@ -124,7 +138,7 @@ function Detail() {
                                 <div className='thumb'>
                                     {
                                         a === null
-                                        ?<img src='../../../noImg.jpg' alt='이미지없음' />
+                                        ?<img src='../noImg.jpg' alt='이미지없음' />
                                         :<img src={IMG_BASIC+"w200"+a} alt={people.cast[i].original_name} />
                                     }
                                 </div>
@@ -175,7 +189,12 @@ function Detail() {
                             <div className='item' key={i}>
                                 <Link to={"/detail/"+a.id}>
                                     <div className='thumb'>
-                                        <img src={IMG_BASIC+"w300"+a.poster_path} alt={a.title} />
+                                    {
+                                        a.poster_path === null
+                                        ?<img src='../noPoster.jpg' alt='이미지없음' />
+                                        :<img src={IMG_BASIC+"w300"+a.poster_path} alt={a.title} />
+                                    }
+                                        
                                     </div>
                                     <div className='ov'><span>상세정보</span></div>
                                 </Link>

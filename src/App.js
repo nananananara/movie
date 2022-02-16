@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Route,Link,Switch  } from 'react-router-dom';
+import { Route,Link,Switch,useLocation  } from 'react-router-dom';
 import axios from 'axios';
 import './css/App.scss';
 import Detail from './Detail.js'
 
 function App() {
+  let location = useLocation();
   const API_KEY = '1fb35531f1b1c3e5cd134fed5e21f5cc';
   const IMG_BASIC = 'https://image.tmdb.org/t/p/';
   const [movie, setMovie] = useState([]);
@@ -27,6 +28,7 @@ function App() {
     const apiRecent = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=ko&page=1` //최신순
     axiosData(api,setMovie);
     axiosData(apiRecent,setMovieRecent);
+    
   },[])
 
  
@@ -58,7 +60,7 @@ function App() {
   return (
     <div className="App">
 
-      <header id="header">
+      <header id="header" className={location.pathname === "/"? "main": "sub"}>
         <div className='layout'>
           <div className='header'>
             <div className='logo'><Link to="/" className='gsans'>THE Movies</Link></div>
