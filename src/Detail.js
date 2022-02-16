@@ -230,7 +230,7 @@ function Detail(props) {
         </div>
 
         <div className='btnBox'>
-            <button onClick={()=>{history.goBack()}}>뒤로가기</button>
+            {/* <button onClick={()=>{history.goBack()}}>뒤로가기</button> */}
             <Link to="/">메인으로</Link>
         </div>
        
